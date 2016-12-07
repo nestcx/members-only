@@ -12,12 +12,20 @@
   <% flash.each do |message_type, message| %>
   <%= message %><br><br>
   <% end %>
-
-    <%= yield %>
+  <h2>Members Only - The Odin Project</h2>
     <% if signed_in? %>
-   	  <%= link_to "Log out", logout_path, method: "delete" %>
+      <%= link_to "Show users", users_path %>  - 
+      <%= link_to "Create new post", new_post_path %>  -  
+      <%= link_to "All Posts", posts_path %>  -  
+      <%= link_to "Log out", logout_path, method: "delete" %>
+    <br><br>
+    ------------------------------------------ 
    	<% else %>
-   		<%= link_to "Sign in", login_path %>
+   		<%= link_to "Sign in", login_path %>  -  
+      <%= link_to "Sign up", new_user_path %>  -  
+      <%= link_to "All Posts", posts_path %>
    	<% end %>
+    <br><br>
+    <%= yield %>
   </body>
 </html>

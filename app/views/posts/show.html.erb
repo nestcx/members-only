@@ -1,0 +1,24 @@
+<h2><%= @post.title %></h2>
+
+<p><%= @post.body %><p>
+
+<% if signed_in? %>
+<p>By: <%= link_to User.find(@post.user_id).name, User.find(@post.user_id) %></p>
+<% else %>
+<p> - anon </p>
+<% end %>
+
+New comment:
+
+<br><br>
+
+
+Comments:
+<br>
+<br>
+
+<% @post.comments.each do |comment| %>
+	<%= comment.body %>
+	- <%= link_to User.find(comment.user_id).name, User.find(comment.user_id) %>
+	<br>------------------------------------------<br>
+<% end %>

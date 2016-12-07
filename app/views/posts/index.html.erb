@@ -1,14 +1,19 @@
-<h2>Posts:</h2>
-<%= link_to "Create new post", new_post_path %>
 <% @posts.each do |post| %>
-	<h3><%= post.title %></h3>
+	<h3><%= link_to post.title, post %></h3>
 	<p><%= post.body %></p>
+
+
 	<% if signed_in? %>
 		<%= User.find_by(id: post.user_id).name %>
+		<% if current_userra == User.find_by(id: post.user_id) %>
+
+    | <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %> <% end %>
+
 	<% else %>
-		<%= link_to "Username hidden!", login_path %>
+		<%= link_to "- anonymous", login_path %>
 	<% end %>
-	<br>
-	-------
+
+	<br><br>
+	------------------------------------------
 	<br>
 <% end %>

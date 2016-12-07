@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
 		if @user && @user.authenticate(params[:session][:password])
 			flash[:success] = "Signed in"
 			log_in(@user)
-			current_user = @user
 			redirect_to root_path
 		else
 			flash.now[:danger] = "Invalid login details"
