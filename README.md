@@ -1,24 +1,5 @@
-# README
+Members only
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Members can post messages to the board, with their username only being shown if a user has logged in!
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+theodinproject members-only
